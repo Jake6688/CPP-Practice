@@ -1,0 +1,387 @@
+//Q35
+//Write a program in C++ to display the pattern like right angle triangle using an asterisk.
+//Sample Output:
+//Input number of rows: 5
+//*
+//**
+//***
+//****
+//*****
+
+
+/*#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Input number of rows : ";
+    cin >> n;
+for (int i = 1; i <= n; i++)
+{
+    for (int j = 1; j<=i ; j++)
+    {
+     cout << "*";
+    }
+    cout << endl;
+}
+}*/
+
+
+//Q36
+//Write a program in C++ to display the pattern like right angle triangle with number.
+//Sample Output:
+//Input number of rows: 5
+//1
+//12
+//123
+//1234
+//12345
+
+/*#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Input number of rows : ";
+    cin >> n;
+    for (int i = 1 ; i <= n;i++)
+    {
+        for(int j = 1; j<=i;j++)
+        {
+            cout << j;
+        }
+        cout << endl;
+    }
+*/
+
+/*
+//Q37
+//Write a program in C++ to display the pattern like right angle triangle with number.
+//Sample Output:
+/Sample Output:
+//Input number of rows: 5
+//1
+//22
+//333
+//4444
+//55555
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Input number of rows : ";
+    cin >> n;
+
+    for (int i = 1; i <=n;i++)
+    {
+        for(int j = 1; j<=i;j++) {
+            cout << i;
+        }
+        cout << endl;
+    }
+}*/
+
+/*
+//Q38
+//Write a program in C++ to make such a pattern like right angle triangle with number increased by 1.
+// Input number of rows: 4
+//1
+//2 3
+//4 5 6
+//7 8 9 10
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, num=1;
+    cout << "Input number of rows : ";
+    cin >> n;
+    for (int i = 1; i <=n ;i++){
+        for (int j = 1; j <=i ; j++)
+        {
+            cout << num << " ";
+            num++;
+        }
+        cout << endl;
+    }
+
+
+}
+ */
+//Q39
+//Write a program in C++ to make such a pattern like a pyramid with numbers increased by 1.
+//Sample Output:
+// Input number of rows: 4
+//       1
+//      2 3
+//     4 5 6
+//    7 8 9 10
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, num=1;
+    cout << "Input number of rows : ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n-i;j++)
+        {
+            cout << " ";
+        }
+        for(int j = 1; j <= i;j++)
+        {
+            cout << num << " ";
+            num++;
+        }
+        cout << endl;
+    }
+}
+*/
+
+//Q40
+//Write a program in C++ to make such a pattern like a pyramid with numbers increased by 1.
+//Sample Output:
+// Input number of rows: 5
+//        *
+//       * *
+//      * * *
+//     * * * *
+//    * * * * *
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, num = 1;
+    cout << "Input number of rows : ";
+    cin >> n;
+
+    for (int i = 1; i<=n;i++)
+    {
+        for(int j = 1; j<=n-i;j++)
+        {
+            cout << " ";
+        }
+        for (int k=1; k<=i ; k++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+*/
+//Q41
+//Write a program in C++ to make such a pattern like a pyramid using number and a number will repeat for a row.
+//Sample Output:
+// Input number of rows: 5
+//        1
+//       2 2
+//      3 3 3
+//     4 4 4 4
+//    5 5 5 5 5
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, num = 1;
+    cout << "Input number of rows : ";
+    cin >> n;
+    for (int i = 1; i <= n; i++){
+        for (int k = 1; k <= n-i;k++)
+        {
+            cout << " ";
+        }
+        for (int k = 1; k<=i;k++){
+            cout << i << " ";
+        }
+        cout << endl;
+}
+}
+*/
+
+//Q42
+//Write a program in C++ to display the pattern like a pyramid using asterisk and each row contain an odd number of asterisks.
+//Sample Output:
+//Input number of rows: 5
+//    *
+//   ***
+//  *****
+// *******
+//*********
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, num = 1;
+    cout << "Input number of rows : ";
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j=1;j<=n-i;j++){
+            cout << " ";
+        }
+        for (int j=1;j<=2*i-1;j++){
+        cout << "*";
+        }
+        cout << endl;
+    }
+}
+*/
+
+//Q43
+//Write a program in C++ to print the Floyd's Triangle
+//Sample Output:
+//Input number of rows: 5
+//1
+//01
+//101
+//0101
+//10101
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, num = 1;
+    cout << "Input number of rows : ";
+    cin >> n;
+    for (int i = 1; i <= n;i++)
+    {
+        for (int j =1;j<=i;j++)
+        {
+            if(((i%2==0 && j%2==0) || ((i-1)%2==0 && (j-1)%2==0)))
+            {
+                cout << "1";
+            }
+            if(((i-1)%2==0 && j%2==0) || ((i%2==0 && (j-1)%2==0)))
+            {
+                cout << "0";
+            }
+        }
+        cout << endl;
+    }
+}
+*/
+
+//Q44
+//Write a program in C++ to display the pattern like a diamond.
+//Sample Output:
+//Input number of rows: 5
+//    *
+//   ***
+//  *****
+// *******
+//*********
+// *******
+//  *****
+//   ***
+//    *
+
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, num = 1;
+    cout << "Input number of rows : ";
+    cin >> n;
+    for (int i = 1; i<=n;i++)//top triangle
+    {
+        for(int k = 1; k <= n-i; k++)
+        {
+            cout << " ";
+        }
+        for (int k =1; k<=i*2-1; k++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    for (int i = 1; i<n;i++)//bottom triangle
+    {
+        for(int j = 1;j<=i;j++)
+        {
+            cout << " ";
+        }
+        for (int j = 1 ; j<2*(n - i) ; j++)
+        {
+            cout << "*";
+        }
+            cout << endl;
+    }
+}
+ */
+
+//Q45
+//Write a program in C++ to display Pascal's triangle like pyramid.
+//Sample Output:
+//Input number of rows: 5
+//        1
+//      1   1
+//    1   2   1
+//  1   3   3   1
+//1   4   6   4   1
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Input number of rows : ";
+    cin >> n;
+
+    for(int i = 1; i <= n ; i++){
+        int coef = 1;
+        for(int j = 1; j<=n-i;j++){
+            cout << " ";
+        }
+        for(int j = 1; j<=i;j++) {
+            cout << coef << " ";
+            coef *= (i-j)/j;
+        }
+        cout << endl;
+    }
+}
+*/
+
+//Q45
+//Write a program in C++ to display Pascal's triangle like right angle traingle.
+//Sample Output:
+//Input number of rows: 5
+//        1
+//      1   1
+//    1   2   1
+//  1   3   3   1
+//1   4   6   4   1
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int row,c=1,blk,i,j;
+    cout << "\n\n Display the Pascal's triangle lime right angle triangle:\n";
+    cout << "-------------------------------------------------------------\n";
+    cout << " Input number of rows: ";
+    cin >> row;
+    for(i=0;i<row;i++)
+    {
+        for(j=0;j<=i;j++)
+        {
+            if (j==0||i==0)
+                c=1;
+            else
+               c=c*(i-j+1)/j;
+            cout<<c<<"   ";
+        }
+        cout<<endl;
+    }
+}
+*/

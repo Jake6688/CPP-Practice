@@ -1,3 +1,830 @@
+//Call by Reference test
+/*
+#include <iostream>
+using namespace std;
+
+void reverse_order(int& variable1, int& variable2);
+
+void main() 
+{
+	int a, b;
+	cout << "Enter 2 ints";
+	cin >> a >> b;
+	reverse_order(a,b);
+	return;
+}
+
+
+void reverse_order(int& variable1, int& variable2) //Call by reference parameters
+{
+	int temp;
+	temp = variable1;
+	variable1 = variable2;
+	variable2 = temp;
+	cout << endl << variable1 << " " << variable2 << ".";
+}
+
+*/
+
+//C++ For Loop: Exercises, Practice, Solution
+//https://www.w3resource.com/cpp-exercises/for-loop/index.php
+
+//Q4
+//Find the perfect numbers between 1 and 500.
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int sum = 1;
+	for (int i = 2; i <= 1000; i++)
+	{
+		for (int j = 2; j < i; j++)
+		{
+			if (i % j == 0)
+			{
+				sum += j;
+			}
+		}
+		if (i == sum)
+		{
+			cout << "Perfect number : " << sum << endl;
+			sum = 1;
+		}
+		sum = 1;
+	}
+}
+*/
+
+//Q5
+//Prime number checker.
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n, counter = 0;
+	cout << "Enter an int to determine prime or not : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		if (n % i == 0)
+		{
+			counter++;
+		}
+	}
+
+	if (counter > 2)
+	{
+		cout << "not a prime";
+	}
+
+	else if (counter == 2)
+	{
+		cout << "is prime number";
+	}
+
+	else
+		cout << "you entered zero or one";
+}
+*/
+
+//Q6
+//Prime number checker with range.
+/*/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int counter = 0,start,end;
+	cout << "Enter start and ending integer : ";
+	cin >> start >> end;
+
+	cout << "The prime numbers between " << start << " and " << end << " are: " << endl;
+	for (int i = start; i <= end; i++)
+	{
+		for (int j = start; j <= i; j++)
+		{
+			if (i%j == 0)
+			{
+				counter++;
+			}
+		}
+		if (counter != 2)
+			counter = 0;
+		else
+			cout << i << " ";
+	}
+}
+*/
+
+//Q7
+//Find the factorial of a number. 
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n, sum = 1;
+	cout << "Input a number to find the factorial : ";
+	cin >> n;
+	cout << "The factorial of the given number is : ";
+	for (int i = 1; i <= n; i++)
+	{
+		sum *= i;
+	}
+	cout << sum;
+}
+*/
+
+//Q7
+//Find the last prime number occur before the entered number.
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n , answer = 0, counter = 1;
+
+	cout << "Input a number to find the last prime number occurs before the number : ";
+	cin >> n;
+
+	for (int i = n; answer == 0; i--)
+	{
+		for (int j = 2; j <= i; j++)
+		{
+			if (i % j == 0)
+			{
+				counter++;
+			}
+		}
+		if (counter == 2)
+		{
+			cout << i;
+			answer++;
+		}
+		else
+			counter = 1;
+	}
+}
+*/
+
+//Q9
+//Find the Greatest Common Divisor (GCD) of two numbers.
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num1, num2, gcd;
+	cout << "Enter 2 nums and find GCD : ";
+	cin >> num1 >> num2;
+	for (int i = 1; i <= num1 && i <= num2; i++)
+	{
+		if ( num1 % i == 0 && num2 % i == 0)
+		{
+			cout <<"current i : " << i << "." << endl;
+			gcd = i;//save last i value to gcd, if cout i, then its num1 %1 and num2%1
+		}
+	}
+	cout << "gcd is : " << gcd;
+}
+*/
+
+
+//Q10
+//Find the sum of digits of a given number.
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num, sum=0;
+	cout << "Input a number : ";
+	cin >> num;
+
+	while (num > 0)
+	{
+		int digit = num % 10;
+		sum += digit;
+		num -= digit;
+		num /= 10;
+	}
+	cout << "Sum is : " << sum;
+}
+*/
+
+//Q11
+//Find the sum of the series 1 + 1/2^2 + 1/3^3 + ..+ 1/n^n.
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	int num;
+
+	cout << "Input the value for nth term: ";
+	cin >> num;
+
+	for (int i = 1; i <= num; i++)
+	{
+		double sum = ( 1.0 / pow(i,i));
+		cout << "1/" << i << "^" << i << " = " << sum << endl;
+	}
+}
+*/
+
+//Q12
+//Calculate the sum of the series (1*1) + (2*2) + (3*3) + (4*4) + (5*5) + ... + (n*n)
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	int n,sum=0;
+	cout << "Input the value for nth term : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		cout << i << " * " << i << " = " << (i * i) << endl;
+		sum += i * i;
+	}
+	cout << "Sum is : " << sum;
+}
+*/
+
+//Q13
+//Calculate the series (1) + (1+2) + (1+2+3) + (1+2+3+4) + ... + (1+2+3+4+...+n).
+/*
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	int n, sum = 0;
+	cout << "Input the value for nth term : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j<=i; j++)
+		{
+			cout << "j is currently : " << j << endl;
+			sum += j;
+		}
+	}
+	cout << "Sum is : " << sum;
+}
+*/
+
+//Q14
+//Find the sum of series 1 - X^2/2! + X^4/4!-.... upto nth term.
+
+
+//Q15
+//Asked user to input positive integers to process count, maximum, minimum, and average or terminate the process with -1.
+/*#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double n,poscount=0, count=0,ncounter=0,max,min;
+	cout << "Enter n : ";
+	cin >> n;
+	ncounter++;
+	max = min = n;
+
+	while (n != -1)
+	{
+		count += n;
+		if (n > max)
+			max = n;
+		if (n < min)
+			min = n;
+		cin >> n;
+		ncounter++;
+	}
+	cout << "poscount = " << poscount << endl << "count = " << count << endl << "max = " << max << endl << "min = " << min << endl;
+	cout << "Average = " << (count / ncounter) << endl;
+}
+*/
+
+
+//Q16
+//List non-prime numbers from 1 to an upperbound.
+/*
+#include <iostream>
+#include <cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	int n,factor_counter=0;
+	cout << "Input the upperlimit:";
+	cin >> n;
+	for ( int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			if (i % j == 0)
+			{
+				factor_counter++;
+			}
+		}
+		if (factor_counter > 2)
+		{
+			cout << setw(3) << i;
+		}
+		factor_counter = 0;
+	}
+}
+*/
+
+
+//Q17
+//Print a square pattern with # character.
+/*
+#include <iostream>
+#include <cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	int n;
+	cout << "Input the number of characters for a side : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= n; j++)
+		{
+			cout << setw(3) << "*";
+		}
+		cout << endl;
+	}
+}
+*/
+
+
+//Q18
+//Display the cube of the number upto given an integer.
+/*
+#include <iostream>
+#include <cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{	
+	int n;
+	cout << "Input the number of terms : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++) 
+	{
+		cout << "Number is : " << i << " and the cube of " << i << " is : " << pow(i, 3) << endl;
+	}
+}
+*/
+
+
+//Q19
+//Display the multiplication table vertically from 1 to n.
+/*
+#include <iostream>
+#include <cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	int n;
+	cout << "Input the number upto : ";
+	cin >> n;
+
+	for (int i = 1; i <= 10; i++)
+	{
+		for (int j = 1; j <= n; j++)
+		{
+
+			cout << i << "x" << j << "=" << i*j << " ";
+		}
+		cout << endl;
+	}
+}
+*/
+
+
+//Q20
+//display the n terms of odd natural number and their sum.
+/*
+#include <iostream>
+#include <cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	int n, counter=0,sum=0;
+	cout << "Input number of terms : ";
+	cin >> n;
+
+
+	for (int i = 1; counter < n; i+=2)
+	{
+		cout << i << " ";
+		sum += i;
+		counter++;
+	}
+	cout << "Sum is : " << sum;
+}
+*/
+
+//Q21
+//display the n terms of odd natural number and their sum.
+/*
+#include <iostream>
+#include <cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	int n, counter = 0, sum = 0;
+	cout << "Input number of terms : ";
+	cin >> n;
+
+
+	for (int i = 2; counter < n; i += 2)
+	{
+		cout << i << " ";
+		sum += i;
+		counter++;
+	}
+	cout << "Sum is : " << sum;
+}
+*/
+
+//Q22
+//Display the n terms of harmonic series and their sum.
+/*
+#include <iostream>
+#include <cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	int n;
+	double sum = 0;
+	cout << "Input number of terms : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		cout << 1 << "/" << i << " " << " + ";
+		sum += (1.0 / i);
+	}
+	cout << endl << "Sum is : " << sum;
+}
+*/
+
+//Q23
+//Display the sum of the series [ 9 + 99 + 999 + 9999 ...].
+/*
+#include <iostream>
+#include <cmath>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	int n = 2, j = 1, sum = 0, op_num = 0;
+
+	cout << "Enter n : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+			op_num *= 10;
+			op_num += 9;
+			cout << op_num << " ";
+			sum += op_num;
+	}
+	cout << "Sum of the series : " << sum;
+}
+*/
+
+//Q24
+//Display the sum of the series [ 1+x+x^2/2!+x^3/3!+....]
+
+//Q25 !!need review
+//Find the sum of the series [ x - x^3 + x^5 + ......]
+/*
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	int n = 5, x = 2, m = -1, sum = 0, ctr;
+
+	sum = x;
+
+	for (int i = 0; i < n; i++)
+	{
+		ctr = (2 * i + 1);
+		cout << m * pow(x, ctr) << endl;
+		sum += m * pow(x, ctr);
+		m = m * (-1);
+	}
+	cout << "\n The sum of the series upto " << n << " term is: " << sum << endl;
+}
+*/
+
+//Q26
+//Find the sum of the series 1 +11 + 111 + 1111 + .. n terms.
+/*
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	int n,num=1,sum=0;
+	cout << "Input number of terms : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		sum += num;
+		cout << num << " ";
+		num *= 10;
+		num += 1;
+	}
+	cout << "Sum is : " << sum;
+}
+*/
+
+//Q27 
+//First n terms of Fibonacci Series
+//F3 = F1 + F2
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n, last_term = 0, this_term = 1, next_term;
+	cout << "Input number of terms to display : ";
+	cin >> n;
+
+	cout << "Here is Fibonnacci numbers for " << n << " terms." << endl;
+
+	for (int i = 1; i <= n; i++)
+	{
+		cout << last_term << " ";
+
+		next_term = last_term + this_term;
+		last_term = this_term;
+		this_term = next_term;
+	}
+}
+*/
+
+//Q28 
+//Find the number and sum of all integer between 100 and 200 which are divisible by 9
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int sum = 0;
+	cout << "Numbers between 100 and 200, divisible by 9 : ";
+	for (int i = 100; i <= 200; i++)
+	{
+		if (i % 9 == 0)
+		{
+			sum += i;
+		}
+	}
+	cout << sum;
+}
+*/
+
+//Q29 !!
+//Find LCM of any two numbers using HCF
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int lcm = 1, a, b;
+	cout << "Input 2 numbers for LCM : ";
+	cin >> a >> b;
+	int currFactor = 2;
+	while (true) {
+		int division1 = a / currFactor;
+		int division2 = b / currFactor;
+		if (!(division1 * currFactor == a && division2 * currFactor == b)) {
+			if (a < currFactor || b < currFactor) {
+				lcm *= a * b;
+				break;
+			}
+			currFactor++;
+		}
+		lcm *= currFactor;
+		a /= currFactor;
+		b /= currFactor;
+	}
+	cout << lcm;
+}
+
+//Q30
+//Display the number in reverse order.
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int oldnum, newnum = 0, digit;
+
+	cout << "Enter input : ";
+	cin >> oldnum;
+
+	while (oldnum > 0)
+	{
+		digit = oldnum % 10;
+		oldnum /= 10;
+		newnum *= 10;
+		newnum += digit;
+	}
+	cout << newnum;
+}
+*/
+
+//Q31
+//Find out the sum of an A.P. series.
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+
+
+
+}
+*/
+
+//Q32
+//Find out the sum of an G.P. series.
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+
+
+
+
+
+}
+*/
+
+//Q33
+//Check Whether a Number can be Express as Sum of Two Prime Numbers.
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	cout << "Enter num : ";
+	cin >> n;
+
+	for (;;)
+	{
+
+
+	}
+}
+*/
+
+///solution
+/*
+#include <iostream>
+using namespace std;
+
+	int main()
+	{
+		int n, i, flg1 = 1, flg2 = 1, flg3 = 0, j;
+		float sum = 0;
+		cout << "\n\n Check Whether a Number can be Express as Sum of Two Prime Numbers:\n";
+		cout << "------------------------------------------------------------------------\n";
+		cout << " Input  a positive integer: ";
+		cin >> n;
+		for (i = 2; i <= n / 2; i++)
+		{
+	flg1 = 1;
+	flg2 = 1;
+	for (j = 2; j < i; j++)
+	{
+		if (i % j == 0)
+		{
+			flg1 = 0;
+			j = i;
+		}
+	}
+	for (j = 2; j < n - i; j++)
+	{
+		if ((n - i) % j == 0)
+		{
+			flg2 = 0;
+			j = n - i;
+		}
+	}
+	if (flg1 == 1 && flg2 == 1)
+	{
+		cout << n << " = " << i << " + " << n - i << endl;
+		flg3 = 1;
+	}
+		}
+		if (flg3 == 0)
+		{
+			cout << n << " can not be expressed as sum of two prime numbers." << endl;
+		}
+	}
+*/
+
+//Q35
+//Display the pattern like right angle triangle using an asterisk.
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	cout << "Input number of rows : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= i ; j++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+}
+*/
+
+//Q36
+//Display the pattern like right angle triangle with number.
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	cout << "Input number of rows : ";
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			cout << j;
+		}
+		cout << endl;
+	}
+}
+*/
+
 //Q35
 //Write a program in C++ to display the pattern like right angle triangle using an asterisk.
 //Sample Output:
